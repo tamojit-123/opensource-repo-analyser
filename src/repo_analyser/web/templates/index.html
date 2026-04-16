@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero">
+        <p class="eyebrow">Google ADK Multi-Agent Repository Analyst</p>
+        <h1>Analyze GitHub issues, pull requests, and unresolved work from one chat box.</h1>
+        <p class="subcopy">
+          Streams coordinator progress, agent logs, issue-to-PR mappings, and markdown fix briefs.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form id="chat-form" class="chat-form">
+          <label for="repo-url">GitHub Repository URL</label>
+          <div class="input-row">
+            <input id="repo-url" name="repo-url" type="url" placeholder="https://github.com/owner/repo" required />
+            <button type="submit">Analyze</button>
+          </div>
+        </form>
+
+        <div class="columns">
+          <div class="card">
+            <h2>Agent Logs</h2>
+            <div id="logs" class="log-list"></div>
+          </div>
+          <div class="card">
+            <h2>Dashboard</h2>
+            <div id="summary" class="summary-grid"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Issue Suggestions</h2>
+          <div id="issues" class="issue-list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Issue / PR Mapping</h2>
+          <div id="mappings" class="mapping-list"></div>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+  </html>
